@@ -12,7 +12,7 @@ import { FloatingShapes } from "../../components/legacy/3d";
 
 const Experience = () => {
   return (
-    <section className="relative pb-24 overflow-hidden">
+    <section className="relative pb-12 md:pb-24 overflow-hidden">
       <FloatingShapes preset="code" />
 
       <div className="relative z-10">
@@ -27,7 +27,7 @@ const Experience = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <VerticalTimeline lineColor="rgba(200, 162, 90, 0.2)">
             {data.experiences.map((exp, index) => (
               <VerticalTimelineElement
@@ -40,7 +40,6 @@ const Experience = () => {
                   borderRadius: "24px",
                   boxShadow: "var(--shadow)",
                   color: "inherit",
-                  padding: "32px",
                 }}
                 contentArrowStyle={{
                   borderRight: "8px solid rgba(255, 255, 255, 0.1)",

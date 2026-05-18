@@ -21,7 +21,7 @@ const itemVariants = {
 
 const Skills = () => {
   return (
-    <section className="relative pb-24 overflow-hidden">
+    <section className="relative pt-4 md:pt-16 pb-12 md:pb-24 overflow-hidden">
       <ParticleField intensity="light" showRings={false} />
 
       <div className="relative z-10">
@@ -30,8 +30,9 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="-mt-4 md:mt-0"
         >
-          <h2 className="main-heading">
+          <h2 className="main-heading !mt-0">
             Skills & <span>Technologies</span>
           </h2>
         </motion.div>
@@ -39,13 +40,13 @@ const Skills = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* 3D Interactive Globe */}
           <motion.div
-            className="mb-20 text-center"
+            className="mb-12 md:mb-20 text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="h-[400px] w-full flex items-center justify-center">
+            <div className="h-[280px] sm:h-[320px] md:h-[400px] w-full flex items-center justify-center">
                <SkillsSphere />
             </div>
             <p className="text-[13px] mt-4 italic opacity-60 tracking-wide" style={{ color: 'var(--textMuted)' }}>Drag to rotate the skills globe</p>

@@ -91,10 +91,17 @@ body {
   }
 
   @media (max-width: 991px) {
-    .main-heading { font-size: 36px; @apply mb-12; }
+    .main-heading {
+      font-size: 36px;
+      @apply mb-12;
+    }
   }
+
   @media (max-width: 576px) {
-    .main-heading { font-size: 30px; @apply mb-10; }
+    .main-heading {
+      font-size: 30px;
+      @apply mb-10;
+    }
   }
 
   .main-heading span {
@@ -145,6 +152,14 @@ body {
     }
   }
 
+  .vertical-timeline-element-content {
+    padding: 20px !important;
+    
+    @media (min-width: 768px) {
+      padding: 32px !important;
+    }
+  }
+
   .profile_ring {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[rgba(200,162,90,0.15)] rounded-full;
     animation: profileRingSpin 12s linear infinite;
@@ -175,6 +190,18 @@ body {
 
   .particle_field {
     @apply absolute inset-0 w-full h-full pointer-events-none z-0;
+  }
+
+  .floating_shapes,
+  .network_scene {
+    @apply relative w-full h-[150px] pointer-events-none z-0;
+  }
+
+  @media (max-width: 767px) {
+    .floating_shapes,
+    .network_scene {
+      @apply h-[70px];
+    }
   }
 
   .skills_sphere {
@@ -215,18 +242,35 @@ body {
 }
 
 @keyframes profileRingSpin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @keyframes profileGlowPulse {
-  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  0% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
 }
 
 @keyframes loaderSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes shine {
@@ -236,6 +280,13 @@ body {
 }
 
 @keyframes scrollWheel {
-  0% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(10px); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }

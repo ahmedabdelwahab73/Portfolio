@@ -47,25 +47,25 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
-            className="p-10 glass-card text-center mb-10"
+            className="p-5 sm:p-8 md:p-10 glass-card text-center sm:text-left mb-10"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="mb-8">
-              <h3 className="text-[32px] font-extrabold mb-1" style={{ fontFamily: 'var(--fontDisplay)', color: 'var(--textColor)' }}>{personalInfo.name}</h3>
-              <p className="text-[18px] font-semibold" style={{ color: 'var(--mainColor)' }}>{personalInfo.title}</p>
+            <div className="mb-6 sm:mb-8 text-center">
+              <h3 className="text-[26px] sm:text-[32px] font-extrabold mb-1" style={{ fontFamily: 'var(--fontDisplay)', color: 'var(--textColor)' }}>{personalInfo.name}</h3>
+              <p className="text-[16px] sm:text-[18px] font-semibold" style={{ color: 'var(--mainColor)' }}>{personalInfo.title}</p>
             </div>
-            <p className="text-[16px] leading-[1.8] mb-8 max-w-3xl mx-auto" style={{ color: 'var(--textMuted)' }}>
+            <p className="text-[14.5px] sm:text-[16px] leading-[1.7] mb-8 max-w-3xl mx-auto text-left sm:text-center" style={{ color: 'var(--textMuted)' }}>
               {personalInfo.bio}
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://drive.google.com/file/d/17cOYxaqN-SrRCeN6LqAx2BcxkJ9Xurxy/view?usp=drive_link"
-                className="custom-button !text-white !border-none !shadow-[0_8px_30px_rgba(200,162,90,0.3)] gap-2 text-[15px]"
+                className="custom-button w-full sm:w-auto flex justify-center !text-white !border-none !shadow-[0_8px_30px_rgba(200,162,90,0.3)] gap-2 text-[15px]"
                 style={{ background: 'var(--gradient)' }}
                 target="_blank"
                 rel="noreferrer"
@@ -74,7 +74,7 @@ const About = () => {
               </a>
               <a 
                 href={CV} 
-                className="custom-button !text-[var(--textColor)] hover:!bg-[var(--glassBg)] hover:!border-[var(--mainColor)] hover:!text-[var(--mainColor)] gap-2 text-[15px]" 
+                className="custom-button w-full sm:w-auto flex justify-center !text-[var(--textColor)] hover:!bg-[var(--glassBg)] hover:!border-[var(--mainColor)] hover:!text-[var(--mainColor)] gap-2 text-[15px]" 
                 rel="noreferrer" 
                 download
               >
@@ -98,18 +98,18 @@ const About = () => {
               { icon: FaLinkedinIn, label: "LinkedIn", value: "View Profile", href: personalInfo.linkedin },
               { icon: MdWork, label: "Experience", value: "4+ Years" },
             ].map((info, idx) => (
-              <motion.div key={idx} className="p-6 rounded-2xl glass-card flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(200,162,90,0.08)] group" variants={itemVariants}>
-                <div className="w-11 h-11 flex items-center justify-center rounded-xl bg-[rgba(200,162,90,0.08)] text-[22px] transition-transform group-hover:scale-110" style={{ color: 'var(--mainColor)' }}>
+              <motion.div key={idx} className="p-6 rounded-2xl glass-card flex items-center gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(200,162,90,0.08)] group overflow-hidden" variants={itemVariants}>
+                <div className="w-11 h-11 min-w-[44px] flex items-center justify-center rounded-xl bg-[rgba(200,162,90,0.08)] text-[22px] transition-transform group-hover:scale-110" style={{ color: 'var(--mainColor)' }}>
                   <info.icon />
                 </div>
-                <div>
+                <div className="min-w-0 flex-1">
                   <p className="text-[13px] font-bold text-[var(--textMuted)] uppercase tracking-wider mb-0.5">{info.label}</p>
                   {info.href ? (
-                    <a href={info.href} target={info.label === "LinkedIn" ? "_blank" : undefined} rel={info.label === "LinkedIn" ? "noreferrer" : undefined} className="text-[15px] font-semibold hover:!text-[var(--mainColor)] transition-colors" style={{ color: 'var(--textColor)' }}>
+                    <a href={info.href} target={info.label === "LinkedIn" ? "_blank" : undefined} rel={info.label === "LinkedIn" ? "noreferrer" : undefined} className="block text-[14px] sm:text-[15px] font-semibold hover:!text-[var(--mainColor)] transition-colors break-all" style={{ color: 'var(--textColor)' }}>
                       {info.value}
                     </a>
                   ) : (
-                    <p className="text-[15px] font-semibold" style={{ color: 'var(--textColor)' }}>{info.value}</p>
+                    <p className="text-[14px] sm:text-[15px] font-semibold break-words" style={{ color: 'var(--textColor)' }}>{info.value}</p>
                   )}
                 </div>
               </motion.div>
